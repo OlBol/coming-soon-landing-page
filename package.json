@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development --hot",
     "build": "rm -rf dist && webpack --mode=production --progress",
-    "test": "eslint ./src/**/*.ts && stylelint ./src/main.pcss ./src/styles/*.pcss ./src/styles/components/*.pcss",
+    "test": "eslint ./src/**/*.ts && stylelint src/main.scss ./src/styles/*.scss ./src/styles/components/*.scss",
     "create-component": "node ./cli/create-component.js"
   },
   "author": "Olga Bolotova",
@@ -18,7 +18,7 @@
     "@types/inputmask": "^4.0.1",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "@typescript-eslint/parser": "^2.17.0",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.1.0",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "favicons-webpack-plugin": "^2.1.0",
@@ -52,9 +52,12 @@
     "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
+    "@types/jquery": "^3.5.2",
     "autoprefixer": "^9.6.5",
     "inputmask": "^4.0.9",
     "jquery": "^3.4.1",
+    "js-loader": "^0.1.1",
+    "owl.carousel": "^2.3.4",
     "postcss-advanced-variables": "^3.0.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-inline-svg": "^4.1.0",

@@ -4,14 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+// const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = (env, argv) => {
     const isProductionBuild = argv.mode === 'production';
 
     const js = {
-        test: /\.ts$/,
-        loader: 'ts-loader'
+        test: /\.js$/,
+        loader: 'babel-loader'
     };
 
     const pug = {
@@ -28,7 +28,7 @@ module.exports = (env, argv) => {
     };
 
     const styles = {
-        test: /\.(p|post|)css$/,
+        test: /\.(s|post|)css$/,
         use: [ 'style-loader', 'postcss-loader' ]
     };
 
@@ -68,7 +68,7 @@ module.exports = (env, argv) => {
     };
 
     const config = {
-        entry: './src/main.ts',
+        entry: './src/main.js',
 
         output: {
             path: path.resolve(__dirname, './dist'),
@@ -86,6 +86,11 @@ module.exports = (env, argv) => {
         },
 
         plugins: [
+            new webpack.ProvidePlugin({
+                $: 'jquery',
+                jQuery: 'jquery',
+                'window.jQuery': 'jquery'
+            }),
             // new HtmlWebpackPlugin({
             //     title: 'paris',
             //     template: './src/index.pug'

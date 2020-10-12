@@ -8,8 +8,50 @@ html(lang='ru')
 
     body
         section.promo
-            img.logo(src="" alt="Логотип компании")
-            h1.promo_title Привет! Скоро здесь можно будет купить билеты на водные прогулки в Будапеште.
-            button.promo__btn(type="button") Погнали
+            .container.promo__container
+                img.logo(src="./src/img/icons/logo.svg" alt="Логотип компании")
+                .promo__wrapper
+                    .promo__text Привет! Скоро здесь можно будет купить билеты на
+                        h1.promo__title водные прогулки в&nbsp;Будапеште
+                        | .
+                    button.promo__btn(type="button") Погнали
 
         section.why
+            .container
+                h2.why__title Почему мы хотим открыться в Будапеште?
+                .slider.owl-carousel.owl-theme
+                    .slider__slide
+                        span.slider__pseudo-img(style="background-image: url('./src/img/slide.png')")
+                        span.slider__pseudo-img(style="background-image: url('./src/img/slide.png')")
+                        img.slider__img(src="./src/img/slide.png" alt="")
+                    .slider__slide
+                        span.slider__pseudo-img(style="background-image: url('./src/img/slide.png')")
+                        span.slider__pseudo-img(style="background-image: url('./src/img/slide.png')")
+                        img.slider__img(src="./src/img/slide.png" alt="")
+                    .slider__slide
+                        span.slider__pseudo-img(style="background-image: url('./src/img/slide.png')")
+                        span.slider__pseudo-img(style="background-image: url('./src/img/slide.png')")
+                        img.slider__img(src="./src/img/slide.png" alt="")
+                p.why__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами! Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами! Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
+
+        section.about
+            .container
+                h3.about__title Наши теплоходики уже бороздят речные просторы
+
+        setcion.socials
+            .container
+                .socials__block
+                    h4.socials__title Instagram
+                    //img.socials__img(src="./src/img/instagram.png" alt="")
+                    p.socials__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
+                .socials__block
+                    h4.socials__title YouTube
+                    //img.socials__img(src="./src/img/youtube.png" alt="")
+                    p.socials__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
+
+        footer.footer
+            .container
+                .footer__text Если у вас есть предложения, пишите нам
+                    a.footer__email(href="mailto:partnerstrip@trip.ru") partnerstrip@trip.ru
+
+

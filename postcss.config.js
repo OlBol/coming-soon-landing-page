@@ -13,7 +13,7 @@ module.exports = {
             selectorBlackList: [":root", "html"]
         }),
         require("postcss-advanced-variables")({
-            variables: require("./src/styles/variables.json")
+            variables: require("./src/variables.json")
         }),
         require("postcss-nested"),
         require("postcss-rgb"),
