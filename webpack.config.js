@@ -86,10 +86,10 @@ module.exports = (env, argv) => {
         },
 
         plugins: [
-            new HtmlWebpackPlugin({
-                title: 'paris',
-                template: './src/index.pug'
-            }),
+            // new HtmlWebpackPlugin({
+            //     title: 'paris',
+            //     template: './src/index.pug'
+            // }),
             new HtmlWebpackPlugin({
                 title: 'budapest',
                 template: './src/index.pug'
