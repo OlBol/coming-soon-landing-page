@@ -54,6 +54,7 @@
   "dependencies": {
     "@types/jquery": "^3.5.2",
     "autoprefixer": "^9.6.5",
+    "gulp": "^4.0.2",
     "inputmask": "^4.0.9",
     "jquery": "^3.4.1",
     "js-loader": "^0.1.1",
@@ -64,6 +65,7 @@
     "postcss-nested": "^4.1.2",
     "postcss-pxtorem": "^4.0.1",
     "postcss-rgb": "^1.0.0",
-    "postcss-scss": "^2.0.0"
+    "postcss-scss": "^2.0.0",
+    "tars-cli": "^1.12.2"
   }
 }

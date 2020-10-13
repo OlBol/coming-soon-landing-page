@@ -149,6 +149,13 @@ img {
   box-sizing: border-box;
   border-radius: 23px;
   text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: 0 0 10px #cba500;
+  }
 }
 
 .why {
@@ -254,6 +261,12 @@ img {
     width: 16px;
     height: 26px;
   }
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
 }
 .owl-prev {
 }
@@ -276,6 +289,48 @@ img {
 
 .about__title {
   margin-bottom: 25px;
+}
+
+.about__cities {
+  position: relative;
+}
+
+.about__area {
+  position: absolute;
+
+  &:hover .about__link {
+    display: block;
+  }
+}
+.about__link {
+  display: none;
+  position: absolute;
+  width: 120px;
+
+  &--novgorod {
+    top: -66px;
+    left: -80px;
+  }
+
+  &--kazan {
+    top: 87px;
+    left: 98px;
+  }
+
+  &--praha {
+    top: -73px;
+    left: 43px;
+  }
+
+  &--moscow {
+    left: -120px;
+    bottom: -20px;
+  }
+
+  &--spb {
+    top: -40px;
+    left: -95px;
+  }
 }
 
 .socials__container {
@@ -312,9 +367,16 @@ img {
 
 .footer__email {
   display: block;
-  padding-top: 25px;
+  margin-top: 25px;
   font-weight: 600;
   font-size: 23px;
   color: #FFFFFF;
   text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    text-decoration: underline;
+  }
 }

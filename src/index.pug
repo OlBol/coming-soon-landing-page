@@ -39,16 +39,35 @@ html(lang='ru')
         section.about
             .container
                 h3.title.about__title Наши теплоходики уже бороздят речные просторы
+                .about__cities.js-cities
+                    include templates/cities
+                    .about__area(data-area='novgorod')
+                        a.about__link.about__link--novgorod(href="#")
+                            img(src="./src/img/novgorod.png")
+                    .about__area(data-area='kazan')
+                        a.about__link.about__link--kazan(href="#")
+                            img(src="./src/img/kazan.png")
+                    .about__area(data-area='praha')
+                        a.about__link.about__link--praha(href="prahatrip.cz")
+                            img(src="./src/img/praha.png")
+                    .about__area(data-area='moscow')
+                        a.about__link.about__link--moscow(href="moskvatrip.ru")
+                            img(src="./src/img/moscow.png")
+                    .about__area(data-area='spb')
+                        a.about__link.about__link--spb(href="nevatrip.ru")
+                            img(src="./src/img/spb.png")
 
         setcion.socials
             .container.socials__container
                 .socials__block
                     h4.title.socials__title Instagram
-                    img.socials__img(src="./src/img/instagram.png" alt="")
+                    a(href="")
+                        img.socials__img(src="./src/img/instagram.png" alt="")
                     p.socials__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
                 .socials__block
                     h4.title.socials__title YouTube
-                    img.socials__img(src="./src/img/youtube.png" alt="")
+                    a(href="")
+                        img.socials__img(src="./src/img/youtube.png" alt="")
                     p.socials__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
 
         footer.footer
