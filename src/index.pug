@@ -11,16 +11,17 @@ html(lang='ru')
             .container.promo__container
                 img.logo(src="./src/img/icons/logo.svg" alt="Логотип компании")
                 .promo__wrapper
-                    .promo__text Привет! Скоро здесь можно будет купить билеты на
-                        h1.promo__title водные прогулки в&nbsp;Будапеште
-                        | .
+                    .promo__text-wrapper
+                        .promo__text Привет! Скоро здесь можно будет купить билеты на
+                            h1.promo__title водные прогулки в&nbsp;Будапеште
+                            | .
                     a.promo__btn(href="#why") Погнали
 
         section#why.why
             .container
                 h2.title.why__title Почему мы хотим открыться в&nbsp;Будапеште?
                 .why__wrapper
-                    p.why__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами! Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами! Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
+                    p.why__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
                     .slider
                         .slider__pseudo-img.slider__pseudo-img--left
                             img.js-pseudo-img(src="./src/img/slider/1.jpg" alt="")
@@ -52,25 +53,27 @@ html(lang='ru')
             .container
                 h3.title.about__title Наши теплоходики уже бороздят речные просторы
             .about__cities.js-cities
-                .about__cities-mobile
-                    //include templates/cities-mobile
-                .about__cities-desktop
+                .about__cities-mobile.js-image-on-mobile
+                    .container
+                        include templates/cities-mobile
+                .about__cities-desktop.js-image-on-desktop
                     include templates/cities-desktop
                 .about__area(data-area='novgorod')
-                    a.about__link.about__link--novgorod(href="#")
-                        img(src="./src/img/novgorod.png")
+                    a.about__popup.about__popup--novgorod(href="#")
+                        img.about__img(src="./src/img/novgorod.png")
                 .about__area(data-area='kazan')
-                    a.about__link.about__link--kazan(href="#")
-                        img(src="./src/img/kazan.png")
+                    a.about__popup.about__popup--kazan(href="#")
+                        img.about__img(src="./src/img/kazan.png")
                 .about__area(data-area='praha')
-                    a.about__link.about__link--praha(href="prahatrip.cz")
-                        img(src="./src/img/praha.png")
+                    a.about__popup.about__popup--praha(href="prahatrip.cz")
+                        img.about__img(src="./src/img/praha.png")
                 .about__area(data-area='moscow')
-                    a.about__link.about__link--moscow(href="moskvatrip.ru")
-                        img(src="./src/img/moscow.png")
+                    a.about__popup.about__popup--moscow(href="moskvatrip.ru")
+                        img.about__img(src="./src/img/moscow.png")
                 .about__area(data-area='spb')
-                    a.about__link.about__link--spb(href="nevatrip.ru")
-                        img(src="./src/img/spb.png")
+                    a.about__popup.about__popup--spb(href="nevatrip.ru")
+                        img.about__img(src="./src/img/spb.png")
+                .about__cursor
 
         setcion.socials
             .container.socials__container
