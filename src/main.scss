@@ -318,6 +318,20 @@ img {
   position: relative;
 }
 
+.about__cities-mobile {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.about__cities-desktop {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
 .about__area {
   position: absolute;
 
