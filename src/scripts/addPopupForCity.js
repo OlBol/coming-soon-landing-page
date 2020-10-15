@@ -21,6 +21,4 @@ export default function addPopupForCity() {
       console.log(10)
     });
   }
-
-
 }
