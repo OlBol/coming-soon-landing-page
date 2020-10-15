@@ -5,7 +5,7 @@ export default function showLangs() {
 
   blocks.each(function () {
     const block = $(this);
-    const link = $(this).find('.js-langs-link');
+    const link = $(this).find('.js-drop-wrap');
     const icon = $(this).find('.js-langs-svg');
     let flag = false;
 
