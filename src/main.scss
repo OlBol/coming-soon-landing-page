@@ -87,15 +87,15 @@ img {
   }
 }
 
-//.preloader {
-//  display: none;
-//
-//  &.is-active {
-//    display: block;
-//    width: 100px;
-//    height: 100px;
-//  }
-//}
+.preloader {
+  display: none;
+
+  &.is-active {
+    display: block;
+    width: 100px;
+    height: 100px;
+  }
+}
 
 .header {
   width: 100%;
@@ -224,7 +224,7 @@ img {
 .promo {
   position: relative;
   height: 100vh;
-  min-height: 300px;
+  min-height: 500px;
   max-height: 1050px;
   padding: 50px 0;
   background-image: url(./src/img/bg-promo.png);
