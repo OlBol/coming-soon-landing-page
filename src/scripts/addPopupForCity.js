@@ -4,6 +4,9 @@ export default function addPopupForCity() {
   let icons = wrapper.querySelectorAll(selectorIconsWrapper + ' [data-icon]');
 
   function resizeArea(icon) {
+    selectorIconsWrapper = window.innerWidth >= 768 ? '.js-image-on-desktop' : '.js-image-on-mobile';
+    icons = wrapper.querySelectorAll(selectorIconsWrapper + ' [data-icon]');
+
     const area = document.querySelector(`[data-area="${icon.dataset.icon}"]`);
     const iconHeight = icon.getBoundingClientRect().bottom - icon.getBoundingClientRect().top;
     const iconWidth = icon.getBoundingClientRect().right - icon.getBoundingClientRect().left;
@@ -14,18 +17,15 @@ export default function addPopupForCity() {
     area.style.left = icon.getBoundingClientRect().left - wrapper.getBoundingClientRect().left + 'px';
   }
 
-  for (const icon of icons) {
-    resizeArea(icon);
-
-    window.addEventListener('scroll', resizeArea.bind(this, icon));
-  }
-
-  window.addEventListener("resize", () => {
-    selectorIconsWrapper = window.innerWidth >= 768 ? '.js-image-on-desktop' : '.js-image-on-mobile';
-    icons = wrapper.querySelectorAll(selectorIconsWrapper + ' [data-icon]');
-
+  function recalcCitiesSizes() {
     for (const icon of icons) {
       resizeArea(icon);
     }
-  });
+  }
+
+  window.addEventListener('scroll', recalcCitiesSizes);
+
+  window.addEventListener("resize", recalcCitiesSizes);
+
+  window.addEventListener("orientationchange", recalcCitiesSizes);
 }

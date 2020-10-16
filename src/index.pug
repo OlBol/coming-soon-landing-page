@@ -7,110 +7,113 @@ html(lang='ru')
         title= htmlWebpackPlugin.options.title
 
     body
-        header.header
-            .container.header__container
-                img.logo(src="./src/img/icons/logo.svg" alt="Логотип компании")
-                div.header__wrapper
-                    .langs.js-langs
-                        span.langs__item_active Ru
-                            svg.langs__svg.js-langs-svg(width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                path(d="M3.95049 3.00777L0.973283 0.366865C0.891496 0.29414 0.784357 0.256442 0.671766 0.260625C0.559113 0.26481 0.455129 0.310352 0.378839 0.38895L0.135985 0.639075C0.0595658 0.717557 0.0197056 0.820156 0.0237034 0.927762C0.0277012 1.03537 0.07506 1.13461 0.157095 1.20726L3.70173 4.35169C3.7839 4.42464 3.89147 4.46226 4.00417 4.45777C4.1174 4.45386 4.22177 4.40843 4.29836 4.32952L7.5967 0.933915C7.67311 0.855373 7.71298 0.752894 7.70898 0.645229C7.70498 0.537622 7.65762 0.438384 7.57558 0.365669L7.31484 0.134313C7.14514 -0.0162303 6.87834 -0.00631836 6.72034 0.1564L3.95049 3.00777Z" fill="#fff")
-                        .langs__wrapper.js-drop-wrap
-                            a.langs__link.js-langs-link(href="#") En
-                    .projects.js-langs
-                        span.langs__item_active BudapeshtTrip
-                            svg.langs__svg.js-langs-svg(width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg")
-                                path(d="M3.95049 3.00777L0.973283 0.366865C0.891496 0.29414 0.784357 0.256442 0.671766 0.260625C0.559113 0.26481 0.455129 0.310352 0.378839 0.38895L0.135985 0.639075C0.0595658 0.717557 0.0197056 0.820156 0.0237034 0.927762C0.0277012 1.03537 0.07506 1.13461 0.157095 1.20726L3.70173 4.35169C3.7839 4.42464 3.89147 4.46226 4.00417 4.45777C4.1174 4.45386 4.22177 4.40843 4.29836 4.32952L7.5967 0.933915C7.67311 0.855373 7.71298 0.752894 7.70898 0.645229C7.70498 0.537622 7.65762 0.438384 7.57558 0.365669L7.31484 0.134313C7.14514 -0.0162303 6.87834 -0.00631836 6.72034 0.1564L3.95049 3.00777Z" fill="#fff")
-                        .projects__wrapper.js-drop-wrap
-                            a.langs__link(href="#") BudapeshtTrip
-                            a.langs__link(href="#") BudapeshtTrip
-                            a.langs__link(href="#") BudapeshtTrip
-        section.promo
-            .container.promo__container
-                .promo__wrapper
-                    .promo__text-wrapper
-                        .promo__text Привет! Скоро здесь можно будет купить билеты на
-                            h1.promo__title водные прогулки в&nbsp;Будапеште
-                            | .
-                    a.promo__btn(href="#why") Погнали
+        .preloader.js-preloader.is-active
+            include templates/preloader
+        .is-load(style="display: none")
+            header.header
+                .container.header__container
+                    img.logo(src="./src/img/icons/logo.svg" alt="Логотип компании")
+                    div.header__wrapper
+                        .langs.js-langs
+                            span.langs__item_active Ru
+                                svg.langs__svg.js-langs-svg(width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M3.95049 3.00777L0.973283 0.366865C0.891496 0.29414 0.784357 0.256442 0.671766 0.260625C0.559113 0.26481 0.455129 0.310352 0.378839 0.38895L0.135985 0.639075C0.0595658 0.717557 0.0197056 0.820156 0.0237034 0.927762C0.0277012 1.03537 0.07506 1.13461 0.157095 1.20726L3.70173 4.35169C3.7839 4.42464 3.89147 4.46226 4.00417 4.45777C4.1174 4.45386 4.22177 4.40843 4.29836 4.32952L7.5967 0.933915C7.67311 0.855373 7.71298 0.752894 7.70898 0.645229C7.70498 0.537622 7.65762 0.438384 7.57558 0.365669L7.31484 0.134313C7.14514 -0.0162303 6.87834 -0.00631836 6.72034 0.1564L3.95049 3.00777Z" fill="#fff")
+                            .langs__wrapper.js-drop-wrap
+                                a.langs__link.js-langs-link(href="#") En
+                        .projects.js-langs
+                            span.langs__item_active BudapeshtTrip
+                                svg.langs__svg.js-langs-svg(width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M3.95049 3.00777L0.973283 0.366865C0.891496 0.29414 0.784357 0.256442 0.671766 0.260625C0.559113 0.26481 0.455129 0.310352 0.378839 0.38895L0.135985 0.639075C0.0595658 0.717557 0.0197056 0.820156 0.0237034 0.927762C0.0277012 1.03537 0.07506 1.13461 0.157095 1.20726L3.70173 4.35169C3.7839 4.42464 3.89147 4.46226 4.00417 4.45777C4.1174 4.45386 4.22177 4.40843 4.29836 4.32952L7.5967 0.933915C7.67311 0.855373 7.71298 0.752894 7.70898 0.645229C7.70498 0.537622 7.65762 0.438384 7.57558 0.365669L7.31484 0.134313C7.14514 -0.0162303 6.87834 -0.00631836 6.72034 0.1564L3.95049 3.00777Z" fill="#fff")
+                            .projects__wrapper.js-drop-wrap
+                                a.langs__link(href="#") BudapeshtTrip
+                                a.langs__link(href="#") BudapeshtTrip
+                                a.langs__link(href="#") BudapeshtTrip
+            section.promo
+                .container.promo__container
+                    .promo__wrapper
+                        .promo__text-wrapper
+                            .promo__text Привет! Скоро здесь можно будет купить билеты на
+                                h1.promo__title водные прогулки в&nbsp;Будапеште
+                                | .
+                        a.promo__btn(href="#why") Погнали
 
-        section#why.why
-            .container
-                h2.title.why__title Почему мы хотим открыться в&nbsp;Будапеште?
-                .why__wrapper
-                    p.why__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
-                    .slider
-                        .slider__pseudo-img.slider__pseudo-img--left
-                            img.js-pseudo-img(src="./src/img/slider/1.jpg" alt="")
-                        .slider__pseudo-img.slider__pseudo-img--right
-                            img.js-pseudo-img(src="./src/img/slider/1.jpg" alt="")
-                        .owl-carousel.owl-theme
-                            .slider__slide
-                                img.slider__img(src="./src/img/slider/1.jpg" alt="")
-                            .slider__slide
-                                img.slider__img(src="./src/img/slider/2.jpg" alt="")
-                            .slider__slide
-                                img.slider__img(src="./src/img/slider/3.jpg" alt="")
-                            .slider__slide
-                                img.slider__img(src="./src/img/slider/4.jpg" alt="")
-                            .slider__slide
-                                img.slider__img(src="./src/img/slider/5.jpg" alt="")
-                            .slider__slide
-                                img.slider__img(src="./src/img/slider/6.jpg" alt="")
-                            .slider__slide
-                                img.slider__img(src="./src/img/slider/7.jpg" alt="")
-                            .slider__slide
-                                img.slider__img(src="./src/img/slider/8.jpg" alt="")
-                            .slider__slide
-                                img.slider__img(src="./src/img/slider/9.jpg" alt="")
-                            .slider__slide
-                                img.slider__img(src="./src/img/slider/10.jpg" alt="")
+            section#why.why
+                .container
+                    h2.title.why__title Почему мы хотим открыться в&nbsp;Будапеште?
+                    .why__wrapper
+                        p.why__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
+                        .slider
+                            .slider__pseudo-img.slider__pseudo-img--left
+                                img.js-pseudo-img(src="./src/img/slider/1.jpg" alt="")
+                            .slider__pseudo-img.slider__pseudo-img--right
+                                img.js-pseudo-img(src="./src/img/slider/1.jpg" alt="")
+                            .owl-carousel.owl-theme
+                                .slider__slide
+                                    img.slider__img(src="./src/img/slider/1.jpg" alt="")
+                                .slider__slide
+                                    img.slider__img(src="./src/img/slider/2.jpg" alt="")
+                                .slider__slide
+                                    img.slider__img(src="./src/img/slider/3.jpg" alt="")
+                                .slider__slide
+                                    img.slider__img(src="./src/img/slider/4.jpg" alt="")
+                                .slider__slide
+                                    img.slider__img(src="./src/img/slider/5.jpg" alt="")
+                                .slider__slide
+                                    img.slider__img(src="./src/img/slider/6.jpg" alt="")
+                                .slider__slide
+                                    img.slider__img(src="./src/img/slider/7.jpg" alt="")
+                                .slider__slide
+                                    img.slider__img(src="./src/img/slider/8.jpg" alt="")
+                                .slider__slide
+                                    img.slider__img(src="./src/img/slider/9.jpg" alt="")
+                                .slider__slide
+                                    img.slider__img(src="./src/img/slider/10.jpg" alt="")
 
-        section.about
-            .container
-                h3.title.about__title Наши теплоходики уже бороздят речные просторы
-            .about__cities.js-cities
-                .about__cities-mobile.js-image-on-mobile
-                    .container
-                        include templates/cities-mobile
-                .about__cities-desktop.js-image-on-desktop
-                    include templates/cities-desktop
-                .about__area(data-area='novgorod')
-                    a.about__popup.about__popup--novgorod(href="#")
-                        img.about__img(src="./src/img/novgorod.png")
-                .about__area(data-area='kazan')
-                    a.about__popup.about__popup--kazan(href="#")
-                        img.about__img(src="./src/img/kazan.png")
-                .about__area(data-area='praha')
-                    a.about__popup.about__popup--praha(href="prahatrip.cz")
-                        img.about__img(src="./src/img/praha.png")
-                        span.about__text-link prahatrip.cz
-                .about__area(data-area='moscow')
-                    a.about__popup.about__popup--moscow(href="moskvatrip.ru")
-                        img.about__img(src="./src/img/moscow.png")
-                        span.about__text-link moskvatrip.ru
-                .about__area(data-area='spb')
-                    a.about__popup.about__popup--spb(href="nevatrip.ru")
-                        img.about__img(src="./src/img/spb.png")
-                        span.about__text-link nevatrip.ru
-                .about__cursor
+            section.about
+                .container
+                    h3.title.about__title Наши теплоходики уже бороздят речные просторы
+                .about__cities.js-cities
+                    .about__cities-mobile.js-image-on-mobile
+                        .container
+                            include templates/cities-mobile
+                    .about__cities-desktop.js-image-on-desktop
+                        include templates/cities-desktop
+                    .about__area(data-area='novgorod')
+                        a.about__popup.about__popup--novgorod(href="#")
+                            img.about__img(src="./src/img/novgorod.png")
+                    .about__area(data-area='kazan')
+                        a.about__popup.about__popup--kazan(href="#")
+                            img.about__img(src="./src/img/kazan.png")
+                    .about__area(data-area='praha')
+                        a.about__popup.about__popup--praha(href="prahatrip.cz")
+                            img.about__img(src="./src/img/praha.png")
+                            span.about__text-link prahatrip.cz
+                    .about__area(data-area='moscow')
+                        a.about__popup.about__popup--moscow(href="moskvatrip.ru")
+                            img.about__img(src="./src/img/moscow.png")
+                            span.about__text-link moskvatrip.ru
+                    .about__area(data-area='spb')
+                        a.about__popup.about__popup--spb(href="nevatrip.ru")
+                            img.about__img(src="./src/img/spb.png")
+                            span.about__text-link nevatrip.ru
+                    .about__cursor
 
-        setcion.socials
-            .container.socials__container
-                .socials__block
-                    h4.title.socials__title Instagram
-                    a(href="")
-                        img.socials__img(src="./src/img/instagram.png" alt="")
-                    p.socials__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
-                .socials__block
-                    h4.title.socials__title YouTube
-                    a(href="")
-                        img.socials__img(src="./src/img/youtube.png" alt="")
-                    p.socials__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
+            setcion.socials
+                .container.socials__container
+                    .socials__block
+                        h4.title.socials__title Instagram
+                        a(href="")
+                            img.socials__img(src="./src/img/instagram.png" alt="")
+                        p.socials__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
+                    .socials__block
+                        h4.title.socials__title YouTube
+                        a(href="")
+                            img.socials__img(src="./src/img/youtube.png" alt="")
+                        p.socials__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
 
-        footer.footer
-            .container
-                .footer__text Если у вас есть предложения, пишите нам:
-                    a.footer__email(href="mailto:partnerstrip@trip.ru") partnerstrip@trip.ru
+            footer.footer
+                .container
+                    .footer__text Если у вас есть предложения, пишите нам:
+                        a.footer__email(href="mailto:partnerstrip@trip.ru") partnerstrip@trip.ru
 
 
