@@ -8,8 +8,8 @@ html(lang='ru')
 
     body
         .preloader.js-preloader.is-active
-            include templates/preloader
-        .is-load(style="display: none")
+            //include templates/preloader
+            //.is-load(style="display: none")
             header.header
                 .container.header__container
                     img.logo(src="./src/img/icons/logo.svg" alt="Логотип компании")
@@ -32,16 +32,16 @@ html(lang='ru')
                 .container.promo__container
                     .promo__wrapper
                         .promo__text-wrapper
-                            .promo__text Привет! Скоро здесь можно будет купить билеты на
-                                h1.promo__title водные прогулки в&nbsp;Будапеште
-                                | .
+                            .promo__text Привет! Скоро здесь можно будет купить билеты на водные прогулки и открыть для себя Будапешт с воды.
+                                //h1.promo__title водные прогулки в&nbsp;Будапеште
+                                //| .
                         a.promo__btn(href="#why") Погнали
 
             section#why.why
                 .container
                     h2.title.why__title Почему мы хотим открыться в&nbsp;Будапеште?
                     .why__wrapper
-                        p.why__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
+                        p.why__text Это совершенно иное ощущение города. Будто узнаешь его впервые и знакомишься уже с другим Будапештом. Когда здания и набережные предстают перед нами в новом ракурсе. Когда город начинает раскрываться, играя своим отражением и  захватывая нас в свои объятия. Где о нем можно поговорить и неторопливо выпить с ним чашечку кофе или бокал вина. Именно с таким Будапештом мы хотим познакомить каждого.
                         .slider
                             .slider__pseudo-img.slider__pseudo-img--left
                                 img.js-pseudo-img(src="./src/img/slider/1.jpg" alt="")
@@ -85,15 +85,15 @@ html(lang='ru')
                         a.about__popup.about__popup--kazan(href="#")
                             img.about__img(src="./src/img/kazan.png")
                     .about__area(data-area='praha')
-                        a.about__popup.about__popup--praha(href="prahatrip.cz")
+                        a.about__popup.about__popup--praha(href="https://prahatrip.cz/" target="_blank")
                             img.about__img(src="./src/img/praha.png")
                             span.about__text-link prahatrip.cz
                     .about__area(data-area='moscow')
-                        a.about__popup.about__popup--moscow(href="moskvatrip.ru")
+                        a.about__popup.about__popup--moscow(href="https://moskvatrip.ru/" target="_blank")
                             img.about__img(src="./src/img/moscow.png")
                             span.about__text-link moskvatrip.ru
                     .about__area(data-area='spb')
-                        a.about__popup.about__popup--spb(href="nevatrip.ru")
+                        a.about__popup.about__popup--spb(href="https://nevatrip.ru/" target="_blank")
                             img.about__img(src="./src/img/spb.png")
                             span.about__text-link nevatrip.ru
                     .about__cursor
@@ -102,18 +102,18 @@ html(lang='ru')
                 .container.socials__container
                     .socials__block
                         h4.title.socials__title Instagram
-                        a(href="")
+                        a.socials__link.socials__link--instagram(href="https://www.instagram.com/nevatrip.ru/" target="_blank")
                             img.socials__img(src="./src/img/instagram.png" alt="")
-                        p.socials__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
+                        p.socials__text Там мы делимся полезной информацией о наших любимых городах и о нашей команде.
                     .socials__block
                         h4.title.socials__title YouTube
-                        a(href="")
+                        a.socials__link.socials__link--youtube(href="https://www.youtube.com/channel/UC3vCmQx4KRNwAhllZZU9n0Q" target="_blank")
                             img.socials__img(src="./src/img/youtube.png" alt="")
-                        p.socials__text Там мы делимся полезной информацией о наших любимых городах. Восхищайтесь и впитывайте вместе с нами!
+                        p.socials__text А здесь мы показываем и рассказываем о любимых наших городах. Восхищайтесь и влюбляйтесь вместе с нами!
 
             footer.footer
                 .container
                     .footer__text Если у вас есть предложения, пишите нам:
-                        a.footer__email(href="mailto:partnerstrip@trip.ru") partnerstrip@trip.ru
+                        a.footer__email(href="mailto:partnerstrip@trip.ru" target="_blank") partnerstrip@trip.ru
 
 

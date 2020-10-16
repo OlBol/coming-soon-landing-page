@@ -9,7 +9,7 @@ addPopupForCity();
 slider();
 showLangs();
 
-setTimeout(() => {
-    document.querySelector('.is-load').style.display = 'block';
-    document.querySelector('.js-preloader').classList.remove('is-active');
-}, 2500);
+// setTimeout(() => {
+//     document.querySelector('.is-load').style.display = 'block';
+//     document.querySelector('.js-preloader').classList.remove('is-active');
+// }, 2500);
