@@ -2,6 +2,7 @@ export default function addPopupForCity() {
   const wrapper = document.querySelector('.js-cities');
   let selectorIconsWrapper = window.innerWidth >= 768 ? '.js-image-on-desktop' : '.js-image-on-mobile';
   let icons = wrapper.querySelectorAll(selectorIconsWrapper + ' [data-icon]');
+  let allAreas = document.querySelectorAll(`[data-area]`);
 
   function resizeArea(icon) {
     selectorIconsWrapper = window.innerWidth >= 768 ? '.js-image-on-desktop' : '.js-image-on-mobile';
@@ -28,4 +29,18 @@ export default function addPopupForCity() {
   window.addEventListener("resize", recalcCitiesSizes);
 
   window.addEventListener("orientationchange", recalcCitiesSizes);
+
+  window.addEventListener('click', (event) => {
+    const area = event.target;
+
+    if (area.classList.contains('js-city-area')) {
+      if (area.classList.contains('is-active')) {
+        area.classList.remove('is-active');
+      } else {
+        area.classList.add('is-active');
+      }
+    } else {
+      allAreas.forEach(area => area.classList.remove('is-active'));
+    }
+  });
 }
