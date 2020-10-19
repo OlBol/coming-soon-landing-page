@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-// const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = (env, argv) => {
     const isProductionBuild = argv.mode === 'production';
@@ -100,7 +100,7 @@ module.exports = (env, argv) => {
                 template: './src/index.pug'
             }),
             new SpriteLoaderPlugin({ plainSprite: true }),
-            // new FaviconsWebpackPlugin('./src/images/favicon.png')
+            new FaviconsWebpackPlugin('./src/img/favicon.png')
         ]
     };
 
