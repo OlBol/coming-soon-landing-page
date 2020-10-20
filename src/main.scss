@@ -84,9 +84,28 @@ img {
   color: #000;
 
   @media (min-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (min-width: 991px) {
     font-size: 34px;
   }
 }
+
+//.text {
+//  font-weight: 600;
+//  font-size: 22px;
+//  line-height: 1.4;
+//  color: #000;
+//
+//  @media (min-width: 768px) {
+//    font-size: 28px;
+//  }
+//
+//  @media (min-width: 991px) {
+//    font-size: 34px;
+//  }
+//}
 
 //.preloader {
 //  display: none;
@@ -123,7 +142,6 @@ img {
 
 .langs,
 .projects {
-  margin-top: -10px;
   position: relative;
   margin-left: 0;
   padding-left: 10px;
@@ -569,6 +587,11 @@ img {
   position: relative;
   max-width: 2560px;
   margin: 40px auto 20px;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    overflow: visible;
+  }
 }
 
 .about__cities-mobile {
@@ -869,8 +892,8 @@ img {
   background-image: url('./src/img/icons/finger.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  width: 27px;
-  height: 45px;
+  width: 24px;
+  height: 42px;
   animation-duration: 15s;
   animation-name: slidein;
   animation-iteration-count: infinite;
@@ -879,6 +902,11 @@ img {
   left: 36%;
   opacity: 1;
   transform: rotate(-38deg);
+
+  @media (min-width: 375px) {
+    width: 27px;
+    height: 45px;
+  }
 
   @media (min-width: 768px) {
     top: 34%;
@@ -978,61 +1006,61 @@ img {
   }
 
   62% {
-    top: 92%;
+    top: 90%;
     left: 56%;
     opacity: 0;
   }
 
   65% {
-    top: 92%;
+    top: 90%;
     left: 56%;
     opacity: 1;
   }
 
   70% {
-    top: 92%;
+    top: 90%;
     left: 56%;
     opacity: 0;
   }
 
   75% {
-    top: 92%;
+    top: 90%;
     left: 56%;
     opacity: 1;
   }
 
   80% {
-    top: 92%;
+    top: 90%;
     left: 56%;
     opacity: 0;
   }
 
   82% {
-    top: 92%;
+    top: 90%;
     left: 94%;
     opacity: 0;
   }
 
   85% {
-    top: 92%;
+    top: 90%;
     left: 94%;
     opacity: 1;
   }
 
   90% {
-    top: 92%;
+    top: 90%;
     left: 94%;
     opacity: 0;
   }
 
   95% {
-    top: 92%;
+    top: 90%;
     left: 94%;
     opacity: 1;
   }
 
   100% {
-    top: 92%;
+    top: 90%;
     left: 94%;
     opacity: 0;
   }
@@ -1253,7 +1281,7 @@ img {
 .socials__text {
   margin-top: 20px;
   font-weight: normal;
-  font-size: 19px;
+  font-size: 17px;
   line-height: 1.5;
   color: #000000;
 
@@ -1261,9 +1289,9 @@ img {
     font-size: 20px;
   }
 
-  @media (min-width: 991px) {
-    font-size: 22px;
-  }
+  //@media (min-width: 991px) {
+  //  font-size: 22px;
+  //}
 }
 
 .socials__img {
