@@ -13,6 +13,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $main-color;
+  overflow-x: hidden;
 
   //.is-load {
   //  max-height: 100vh;
@@ -427,6 +428,7 @@ img {
     margin: 35px 0;
     z-index: 1;
     filter: blur(5px);
+    border-radius: 14px;
   }
 
   @media (min-width: 991px) {
@@ -444,6 +446,7 @@ img {
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 14px;
     filter: blur(3px);
+    z-index: 4;
   }
 
   & img {
@@ -566,7 +569,6 @@ img {
   position: relative;
   max-width: 2560px;
   margin: 40px auto 20px;
-  overflow: hidden;
 }
 
 .about__cities-mobile {
@@ -632,13 +634,37 @@ img {
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 5;
 
-  &__img {
+  &__wrapper {
     position: absolute;
-    max-width: 90vw;
-    max-height: 65vh;
+    //max-width: 90vw;
+    //max-height: 65vh;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+  }
+
+  &__img {
+    //position: absolute;
+    max-width: 90vw;
+    max-height: 65vh;
+    //left: 50%;
+    //top: 50%;
+    //transform: translate(-50%, -50%);
+  }
+
+  &__link {
+    position: absolute;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    color: #fff;
+    /* font-weight: 600; */
+    bottom: 20px;
+    left: 20px;
+    font-size: 22px;
+    //background-color: rgba(0, 0, 0, 0.5);
+    //filter: blur(30px);
+    filter: drop-shadow(0 0 20px #000);
   }
 
   &__close-btn {

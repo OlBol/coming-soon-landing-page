@@ -8,6 +8,7 @@ export default function addPopupForCity() {
   const mobilePopup = document.querySelector('.js-city-popup');
   const closePopupBtn =  mobilePopup.querySelector('.js-close-city-popup');
   const mobilePopupImg = mobilePopup.querySelector('img');
+  const mobilePopupLink = mobilePopup.querySelector('a');
   const cursor = wrapper.querySelector('.js-cursor');
 
   function resizeArea(icon) {
@@ -48,6 +49,7 @@ export default function addPopupForCity() {
     if (isMobile) {
       if (area.classList.contains('js-city-area')) {
         const imgSrc =  area.querySelector('img').getAttribute('src');
+        const linkSrc =  area.querySelector('a').getAttribute('href');
 
         cursor.style.display = 'none';
         document.body.style.overflow = 'hidden';
@@ -55,6 +57,8 @@ export default function addPopupForCity() {
         mobilePopup.style.top = window.scrollY - 45 + 'px';
         mobilePopup.style.bottom = window.scrollY + window.innerHeight + 45 + 'px';
         mobilePopupImg.setAttribute('src', imgSrc);
+        mobilePopupLink.setAttribute('href', linkSrc);
+        mobilePopupLink.innerText = linkSrc;
         $(mobilePopup).fadeIn(200);
       }
     } else {
