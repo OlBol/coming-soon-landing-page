@@ -5,10 +5,11 @@ export default function addPopupForCity() {
   let selectorIconsWrapper = window.innerWidth >= 768 ? '.js-image-on-desktop' : '.js-image-on-mobile';
   let icons = wrapper.querySelectorAll(selectorIconsWrapper + ' [data-icon]');
   let allAreas = document.querySelectorAll(`[data-area]`);
-  const mobilePopup = document.querySelector('.js-city-popup');
-  const closePopupBtn =  mobilePopup.querySelector('.js-close-city-popup');
-  const mobilePopupImg = mobilePopup.querySelector('img');
-  const mobilePopupLink = mobilePopup.querySelector('a');
+  const popup = document.querySelector('.js-city-popup');
+  // const closePopupBtn =  popup.querySelector('.js-close-city-popup');
+  const popupImg = popup.querySelector('img');
+  const popupAddress = popup.querySelector('.js-address');
+  const popupLink = popup.querySelector('a');
   const cursor = wrapper.querySelector('.js-cursor');
 
   function resizeArea(icon) {
@@ -23,6 +24,22 @@ export default function addPopupForCity() {
     area.style.width = iconWidth.toFixed() + 'px';
     area.style.top = icon.getBoundingClientRect().top - wrapper.getBoundingClientRect().top + 'px';
     area.style.left = icon.getBoundingClientRect().left - wrapper.getBoundingClientRect().left + 'px';
+
+
+  }
+
+  for (const area of allAreas) {
+    area.addEventListener('mouseover', (event) => {
+      const dataAttr = event.target.dataset.area;
+      const icon = wrapper.querySelector(`${selectorIconsWrapper} [data-icon="${dataAttr}"]`);
+      console.log(icon)
+      icon.classList.add('is-active');
+      // console.log(pathIcons, `${selectorIconsWrapper} [data-icon="${dataAttr}"] path`)
+      // for (const path of pathIcons) {
+      //   console.log(path)
+      //   path.setAttribute('fill', 'black');
+      // }
+    });
   }
 
   function recalcCitiesSizes() {
@@ -31,54 +48,84 @@ export default function addPopupForCity() {
     }
   }
 
+  function changePopupPosition(isMobile) {
+    if (isMobile) {
+      popup.style.top = window.scrollY - 45 + 'px';
+      popup.style.bottom = window.scrollY + window.innerHeight + 45 + 'px';
+      popup.style.height = 'calc(100vh + 90px)';
+      cursor.style.display = 'none';
+      popupImg.style.height = 'auto';
+    } else {
+      popup.style.top = wrapper.offsetTop + wrapper.offsetHeight * 0.1 + 'px';
+      popup.style.height = wrapper.offsetHeight * 0.8 + 'px';
+      popupImg.style.height = wrapper.offsetHeight * 0.8 + 'px';
+      document.body.style.overflow = 'auto';
+    }
+
+    // wrapper.classList.remove('is-active');
+  }
+
   window.addEventListener('scroll', recalcCitiesSizes);
 
-  window.addEventListener("resize", recalcCitiesSizes);
+  window.addEventListener("resize", () => {
+    const isMobile = window.innerWidth < 768;
+
+    changePopupPosition(isMobile);
+    recalcCitiesSizes();
+  });
 
   window.addEventListener("orientationchange", () => {
-    mobilePopup.style.top = window.scrollY - 45 + 'px';
-    mobilePopup.style.bottom = window.scrollY + window.innerHeight + 45 + 'px';
+    popup.style.top = window.scrollY - 45 + 'px';
+    popup.style.bottom = window.scrollY + window.innerHeight + 45 + 'px';
 
     recalcCitiesSizes();
   });
 
   window.addEventListener('click', (event) => {
+    if (popup.style.display === 'block'
+        && (!event.target.closest('.city-popup__wrapper') || event.target.closest('.js-close-city-popup'))) {
+      console.log(10)
+      $(popup).fadeOut(200, () => popupImg.setAttribute('src', ''));
+      document.body.style.overflow = 'auto';
+    }
+
     const area = event.target;
     const isMobile = window.innerWidth < 768;
 
-    if (isMobile) {
-      if (area.classList.contains('js-city-area')) {
-        const imgSrc =  area.querySelector('img').getAttribute('src');
-        const linkSrc =  area.querySelector('a').getAttribute('href');
+    if (wrapper.classList.contains('is-active') && (!event.target.closest('.city-popup__wrapper') || event.target.closest('.js-close-city-popup'))) wrapper.classList.remove('is-active');
 
-        cursor.style.display = 'none';
+    if (area.classList.contains('js-city-area')) {
+      const imgSrc =  area.querySelector('img').getAttribute('src');
+      const linkSrc =  area.querySelector('a').getAttribute('href');
+      const shortenedLink = linkSrc.split('https://')[1];
+
+      if (isMobile) {
         document.body.style.overflow = 'hidden';
-        // mobilePopup.style.display = 'block';
-        mobilePopup.style.top = window.scrollY - 45 + 'px';
-        mobilePopup.style.bottom = window.scrollY + window.innerHeight + 45 + 'px';
-        mobilePopupImg.setAttribute('src', imgSrc);
-        mobilePopupLink.setAttribute('href', linkSrc);
-        mobilePopupLink.innerText = linkSrc;
-        $(mobilePopup).fadeIn(200);
+      } else {
+        console.log(2)
+        wrapper.classList.add('is-active');
       }
-    } else {
 
-      allAreas.forEach(area => {
-        area.classList.remove('is-active');
-      });
+      popupImg.setAttribute('src', imgSrc);
+      popupLink.setAttribute('href', linkSrc);
+      popupAddress.innerText = shortenedLink;
+      $(popup).fadeIn(200);
 
-      if (area.classList.contains('js-city-area')) {
-        if (!area.classList.contains('is-active')) {
-          cursor.style.display = 'none';
-          area.classList.add('is-active');
-        }
+      if (event.target.dataset.area === 'budapest') {
+        popupLink.style.display = 'none';
+        document.querySelector('.js-budapest-popup').style.display = 'block';
+      } else {
+        popupLink.style.display = 'block';
+        document.querySelector('.js-budapest-popup').style.display = 'none';
       }
+      changePopupPosition(isMobile);
     }
   });
 
-  closePopupBtn.addEventListener('click', () => {
-    $(mobilePopup).fadeOut(200, () => mobilePopupImg.setAttribute('src', ''));
-    document.body.style.overflow = 'auto';
-    // mobilePopupImg.setAttribute('src', '');
-  });
+  // popup.addEventListener('click', (event) => {
+  //   if (!event.target.closest('.city-popup__wrapper') || event.target.closest('.js-close-city-popup') ) {
+  //     $(popup).fadeOut(200, () => popupImg.setAttribute('src', ''));
+  //     document.body.style.overflow = 'auto';
+  //   }
+  // });
 }
