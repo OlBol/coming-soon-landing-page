@@ -40,6 +40,12 @@ export default function addPopupForCity() {
       //   path.setAttribute('fill', 'black');
       // }
     });
+    area.addEventListener('mouseout', (event) => {
+      const dataAttr = event.target.dataset.area;
+      const icon = wrapper.querySelector(`${selectorIconsWrapper} [data-icon="${dataAttr}"]`);
+      console.log(icon)
+      icon.classList.remove('is-active');
+    });
   }
 
   function recalcCitiesSizes() {

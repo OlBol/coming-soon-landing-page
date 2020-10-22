@@ -15,5 +15,5 @@ setTimeout(() => {
     $('.is-load').fadeIn(200);
     // document.querySelector('.js-preloader').classList.remove('is-active');
     $('.js-preloader').fadeOut(200);
-// }, 3000);
-}, 25);
+}, 3000);
+// }, 25);
