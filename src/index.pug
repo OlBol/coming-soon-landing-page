@@ -5,10 +5,16 @@ html(lang='ru')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         meta(http-equiv='X-UA-Compatible' content='ie=edge')
         title= htmlWebpackPlugin.options.title
+        meta(name="description" content="Купить прогулки на теплоходе в Будапеште")
+        meta(property="og:title" content="Водные прогулки в Будапеште")
+        meta(property="og:type" content="website")
+        meta(property="og:url" content="https://site.ru/")
+        meta(property="og:image" content="https://site.ru/img/bg-promo.jpg")
+        meta(property="og:description" content="Купить прогулки на теплоходе в Будапеште")
 
     body
         //.preloader.js-preloader.is-active(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #fff; z-index: 10;")
-        .preloader.js-preloader
+        .preloader.js-preloader(style="position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 10; background-color: #fff;")
             //include templates/preloader
             img(src='./src/img/preloader.gif' style="width: 250px; heightL 250px; position: absolute; z-index: 3; top: 50%; left: 50%; transform: translate(-50%, -50%);")
         .is-load(style="display: none")
