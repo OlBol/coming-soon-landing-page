@@ -32,7 +32,8 @@ showLangs();
 
 
 window.onload = function() {
-    // $('.is-load').fadeIn(200);
-    $('.is-load').css({'display': 'block'});
-    $('.js-preloader').fadeOut(400);
+    setTimeout(() => {
+        document.querySelector('.is-load').style.display = 'block'
+        $('.js-preloader').fadeOut(200);
+    }, 1000);
 };

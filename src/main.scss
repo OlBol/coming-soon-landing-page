@@ -107,6 +107,8 @@ img {
   text-decoration: none;
   z-index: 1;
   transition: background-color 0.3s;
+  user-select: none;
+  -webkit-tap-highlight-color:  transparent;
 
   &:hover,
   &:focus{
@@ -179,6 +181,8 @@ img {
   z-index: 1;
   //width: 48px;
   cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color:  transparent;
 }
 
 .langs {
