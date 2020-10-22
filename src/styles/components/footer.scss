@@ -1,0 +1,36 @@
+.footer {
+  margin-top: 65px;
+  padding: 45px 0;
+  background-color: #232323;
+
+  &__text {
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 30px;
+    color: #B5B5B5;
+
+    &--mobile {
+      margin-top: 40px;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 23px;
+    color: #FFFFFF;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+      text-decoration: underline;
+    }
+  }
+}
