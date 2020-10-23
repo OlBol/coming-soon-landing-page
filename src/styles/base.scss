@@ -4,6 +4,7 @@ html {
 }
 
 body {
+    //overflow: hidden;
     margin: 0;
     font-family: "Open Sans", Helvetica, sans-serif;
     font-size: 16px;
@@ -11,7 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $main-color;
-    overflow-x: hidden;
+    //overflow-x: hidden;
 }
 
 button {

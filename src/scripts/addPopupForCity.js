@@ -32,18 +32,11 @@ export default function addPopupForCity() {
     area.addEventListener('mouseover', (event) => {
       const dataAttr = event.target.dataset.area;
       const icon = wrapper.querySelector(`${selectorIconsWrapper} [data-icon="${dataAttr}"]`);
-      console.log(icon)
       icon.classList.add('is-active');
-      // console.log(pathIcons, `${selectorIconsWrapper} [data-icon="${dataAttr}"] path`)
-      // for (const path of pathIcons) {
-      //   console.log(path)
-      //   path.setAttribute('fill', 'black');
-      // }
     });
     area.addEventListener('mouseout', (event) => {
       const dataAttr = event.target.dataset.area;
       const icon = wrapper.querySelector(`${selectorIconsWrapper} [data-icon="${dataAttr}"]`);
-      console.log(icon)
       icon.classList.remove('is-active');
     });
   }
@@ -67,8 +60,6 @@ export default function addPopupForCity() {
       popupImg.style.height = wrapper.offsetHeight * 0.8 + 'px';
       document.body.style.overflow = 'auto';
     }
-
-    // wrapper.classList.remove('is-active');
   }
 
   window.addEventListener('scroll', recalcCitiesSizes);
@@ -90,7 +81,6 @@ export default function addPopupForCity() {
   window.addEventListener('click', (event) => {
     if (popup.style.display === 'block'
         && (!event.target.closest('.city-popup__wrapper') || event.target.closest('.js-close-city-popup'))) {
-      console.log(10)
       $(popup).fadeOut(200, () => popupImg.setAttribute('src', ''));
       document.body.style.overflow = 'auto';
     }
@@ -107,6 +97,7 @@ export default function addPopupForCity() {
 
       if (isMobile) {
         document.body.style.overflow = 'hidden';
+        document.querySelector('.is-load').style.overflow = 'hidden';
       } else {
         console.log(2)
         wrapper.classList.add('is-active');
@@ -127,11 +118,4 @@ export default function addPopupForCity() {
       changePopupPosition(isMobile);
     }
   });
-
-  // popup.addEventListener('click', (event) => {
-  //   if (!event.target.closest('.city-popup__wrapper') || event.target.closest('.js-close-city-popup') ) {
-  //     $(popup).fadeOut(200, () => popupImg.setAttribute('src', ''));
-  //     document.body.style.overflow = 'auto';
-  //   }
-  // });
 }
