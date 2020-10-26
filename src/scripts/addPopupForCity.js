@@ -24,8 +24,6 @@ export default function addPopupForCity() {
     area.style.width = iconWidth.toFixed() + 'px';
     area.style.top = icon.getBoundingClientRect().top - wrapper.getBoundingClientRect().top + 'px';
     area.style.left = icon.getBoundingClientRect().left - wrapper.getBoundingClientRect().left + 'px';
-
-
   }
 
   for (const area of allAreas) {

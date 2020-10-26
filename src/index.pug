@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-html(lang='ru')
+html(lang='ru' itemscope itemtype="http://schema.org/LocalBusiness")
     head
         meta(charset='UTF-8')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         meta(http-equiv='X-UA-Compatible' content='ie=edge')
         title= htmlWebpackPlugin.options.title
+
         meta(name="description" content="Купить прогулки на теплоходе в Будапеште")
         meta(property="og:title" content="Водные прогулки в Будапеште")
         meta(property="og:type" content="website")
         meta(property="og:url" content="https://site.ru/")
         meta(property="og:image" content="https://site.ru/img/bg-promo.jpg")
         meta(property="og:description" content="Купить прогулки на теплоходе в Будапеште")
+
+        meta(itemprop="image" content="https://moskvatrip.ru/assets/img/nevatrip_logo_social.png")
+        meta(itemprop="logo" content="https://moskvatrip.ru/assets/img/nevatrip_logo_social.png")
+        meta(itemprop="name" content="Budapest")
+        meta(itemprop="address" content="г. Будапешт")
+        meta(itemprop="priceRange" content="200-2500RUB")
+        meta(itemprop="telephone" content="+7(499)647-40-67")
+        meta(itemprop="email" content="info@moskvatrip.ru")
+        meta(itemprop="openingHours" content="С 9:00 до 01:00")
 
     body
         //.preloader.js-preloader.is-active(style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #fff; z-index: 10;")
@@ -20,14 +30,14 @@ html(lang='ru')
         .is-load(style="display: none")
             header.header
                 .container.header__container
-                    img.logo(src="./src/img/icons/logo.svg" alt="Логотип компании")
+                    img.logo(src="./src/img/icons/logo.svg" alt="Логотип компании" itemprop="logo")
                     div.header__wrapper
                         .langs.js-langs
                             span.langs__item_active Ru
                                 svg.langs__svg.js-langs-svg(width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg")
                                     path(d="M3.95049 3.00777L0.973283 0.366865C0.891496 0.29414 0.784357 0.256442 0.671766 0.260625C0.559113 0.26481 0.455129 0.310352 0.378839 0.38895L0.135985 0.639075C0.0595658 0.717557 0.0197056 0.820156 0.0237034 0.927762C0.0277012 1.03537 0.07506 1.13461 0.157095 1.20726L3.70173 4.35169C3.7839 4.42464 3.89147 4.46226 4.00417 4.45777C4.1174 4.45386 4.22177 4.40843 4.29836 4.32952L7.5967 0.933915C7.67311 0.855373 7.71298 0.752894 7.70898 0.645229C7.70498 0.537622 7.65762 0.438384 7.57558 0.365669L7.31484 0.134313C7.14514 -0.0162303 6.87834 -0.00631836 6.72034 0.1564L3.95049 3.00777Z" fill="#fff")
                             .langs__wrapper.js-drop-wrap
-                                a.langs__link.js-langs-link(href="#") En
+                                a.langs__link.js-langs-link(href="#" ) En
                         .projects.js-langs
                             span.langs__item_active BudapeshtTrip
                                 svg.langs__svg.js-langs-svg(width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -40,7 +50,8 @@ html(lang='ru')
                 .container.promo__container
                     .promo__wrapper
                         .promo__text-wrapper
-                            .promo__text Привет! Скоро здесь можно будет купить билеты на водные прогулки и открыть для себя Будапешт с воды.
+                            .promo__text Привет! Скоро здесь можно будет
+                                span(itemprop="name") купить билеты на водные прогулки и открыть для себя Будапешт с воды.
                                 //h1.promo__title водные прогулки в&nbsp;Будапеште
                                 //| .
                         a.btn(href="#why") Погнали
@@ -49,7 +60,7 @@ html(lang='ru')
                 .container
                     h2.title.why__title Что такое Будапешт с&nbsp;воды?
                     .why__wrapper
-                        p.why__text Это совершенно иное ощущение города. Будто узнаешь его впервые и знакомишься уже с другим Будапештом. Когда здания и набережные предстают перед нами в новом ракурсе. Когда город начинает раскрываться, играя своим отражением и захватывая нас в свои объятия. Где о нем можно поговорить и неторопливо выпить чашечку кофе или бокал вина. Именно с таким Будапештом мы хотим познакомить каждого.
+                        p.why__text(itemprop="description") Это совершенно иное ощущение города. Будто узнаешь его впервые и знакомишься уже с другим Будапештом. Когда здания и набережные предстают перед нами в новом ракурсе. Когда город начинает раскрываться, играя своим отражением и захватывая нас в свои объятия. Где о нем можно поговорить и неторопливо выпить чашечку кофе или бокал вина. Именно с таким Будапештом мы хотим познакомить каждого.
                         .slider
                             .slider__pseudo-img.slider__pseudo-img--left
                                 img.js-pseudo-img(src="./src/img/slider/1.jpg" alt="")
@@ -124,8 +135,8 @@ html(lang='ru')
                     .footer__text Связаться с нами:
                         a.footer__link(href="mailto:partnerstrip@trip.ru" target="_blank") partnerstrip@trip.ru
                     .footer__text.footer__text--mobile Другие наши проекты:
-                        a.footer__link(href="") London
-                        a.footer__link(href="") Paris
+                        a.footer__link(href="" ) London
+                        a.footer__link(href="" ) Paris
             .city-popup.js-city-popup
                 .city-popup__wrapper
                     img.city-popup__img(src="" alt="Изображение города, в котором проводятся экскурсии.")
