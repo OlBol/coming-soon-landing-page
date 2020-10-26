@@ -1,15 +1,19 @@
 .city-popup {
   display: none;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
   left: 0;
   width: 100%;
   max-width: 100vw;
-  height: calc(100vh + 70px);
-  background-color: rgba(0, 0, 0, 0.9);
+  height: 100vh;
+  //background-color: rgba(0, 0, 0, 0.9);
   z-index: 5;
 
   @media (min-width: 768px) {
-    background-color: transparent;
+    position: absolute;
+    //background-color: transparent;
   }
 
   &__wrapper {

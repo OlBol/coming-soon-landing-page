@@ -14,7 +14,6 @@ $('.owl-carousel').owlCarousel({
 });
 
 export default function addSliderBackground() {
-  console.log(1)
   const target = document.querySelector('.owl-stage');
   const pseudoImages = document.querySelectorAll('.js-pseudo-img');
 

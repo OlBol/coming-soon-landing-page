@@ -49,16 +49,22 @@ export default function addPopupForCity() {
 
   function changePopupPosition(isMobile) {
     if (isMobile) {
-      popup.style.top = window.scrollY - 45 + 'px';
-      popup.style.bottom = window.scrollY + window.innerHeight + 45 + 'px';
-      popup.style.height = 'calc(100vh + 90px)';
-      cursor.style.display = 'none';
+      // popup.style.top = window.scrollY - 45 + 'px';
+      // popup.style.bottom = window.scrollY + window.innerHeight + 45 + 'px';
+    //   popup.style.height = 'calc(100vh + 90px)';
+    //   cursor.style.display = 'none';
+    //   popupImg.style.height = 'auto';
+      popup.style.top = '0px';
+      popup.style.height = '100vh';
       popupImg.style.height = 'auto';
     } else {
       popup.style.top = wrapper.offsetTop + wrapper.offsetHeight * 0.1 + 'px';
       popup.style.height = wrapper.offsetHeight * 0.8 + 'px';
       popupImg.style.height = wrapper.offsetHeight * 0.8 + 'px';
-      document.body.style.overflow = 'auto';
+      document.body.classList.remove('open-popup');
+      // popup.style.top = window.scrollY - 45 + 'px';
+      // popup.style.bottom = window.scrollY + window.innerHeight + 45 + 'px';
+    //   document.body.style.overflow = 'auto';
     }
   }
 
@@ -72,8 +78,8 @@ export default function addPopupForCity() {
   });
 
   window.addEventListener("orientationchange", () => {
-    popup.style.top = window.scrollY - 45 + 'px';
-    popup.style.bottom = window.scrollY + window.innerHeight + 45 + 'px';
+    // popup.style.top = window.scrollY - 45 + 'px';
+    // popup.style.bottom = window.scrollY + window.innerHeight + 45 + 'px';
 
     recalcCitiesSizes();
   });
@@ -83,6 +89,7 @@ export default function addPopupForCity() {
         && (!event.target.closest('.city-popup__wrapper') || event.target.closest('.js-close-city-popup'))) {
       $(popup).fadeOut(200, () => popupImg.setAttribute('src', ''));
       document.body.style.overflow = 'auto';
+      document.body.classList.remove('open-popup');
     }
 
     const area = event.target;
@@ -97,9 +104,9 @@ export default function addPopupForCity() {
 
       if (isMobile) {
         document.body.style.overflow = 'hidden';
-        document.querySelector('.is-load').style.overflow = 'hidden';
+        document.body.classList.add('open-popup');
+        // document.querySelector('.is-load').style.overflow = 'hidden';
       } else {
-        console.log(2)
         wrapper.classList.add('is-active');
       }
 
