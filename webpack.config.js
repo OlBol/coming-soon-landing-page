@@ -16,15 +16,19 @@ module.exports = (env, argv) => {
 
     const pug = {
         test: /\.pug$/,
-        oneOf: [
-            {
-                resourceQuery: /^\?.pug/,
-                use: ["pug-plain-loader"]
-            },
-            {
-                use: ["pug-loader"]
-            }
-        ]
+        // oneOf: [
+        //     {
+        //         resourceQuery: /^\?.pug/,
+        //         use: ["pug-plain-loader"]
+        //     },
+        //     {
+        //         use: ["pug-loader"],
+        //     }
+        // ],
+        loader: 'pug-loader',
+        options: {
+            pretty: true
+        }
     };
 
     const styles = {
@@ -68,7 +72,7 @@ module.exports = (env, argv) => {
     };
 
     const config = {
-        entry: './src/main.js',
+        entry: './assets/main.js',
 
         output: {
             path: path.resolve(__dirname, './dist'),
@@ -93,14 +97,14 @@ module.exports = (env, argv) => {
             }),
             // new HtmlWebpackPlugin({
             //     title: 'paris',
-            //     template: './src/index.pug'
+            //     template: './assets/index.pug'
             // }),
             new HtmlWebpackPlugin({
                 title: 'budapest',
-                template: './src/index.pug'
+                template: './assets/index.pug'
             }),
             new SpriteLoaderPlugin({ plainSprite: true }),
-            new FaviconsWebpackPlugin('./src/img/favicon.png')
+            new FaviconsWebpackPlugin('./assets/img/landing/favicon.png')
         ]
     };
 

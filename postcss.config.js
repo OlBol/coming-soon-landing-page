@@ -13,14 +13,14 @@ module.exports = {
             selectorBlackList: [":root", "html"]
         }),
         require("postcss-advanced-variables")({
-            variables: require("./src/variables.json")
+            variables: require("./assets/variables.json")
         }),
         require("postcss-nested"),
         require("postcss-rgb"),
         require("postcss-inline-comment"),
         require("postcss-inline-svg")({
             removeFill: true,
-            path: "./src/assets/images/icons"
+            path: "./assets/assets/images/icons"
         }),
         require("postcss-svgo"),
         require("cssnano")()

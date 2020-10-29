@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development --hot --host 192.168.31.195",
     "build": "rm -rf dist && webpack --mode=production --progress",
-    "test": "eslint ./src/**/*.ts && stylelint src/main.scss ./src/styles/*.scss ./src/styles/components/*.scss",
+    "test": "eslint ./assets/**/*.ts && stylelint assets/main.scss ./assets/styles/*.scss ./assets/styles/components/*.scss",
     "create-component": "node ./cli/create-component.js"
   },
   "author": "Olga Bolotova",
