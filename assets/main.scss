@@ -100,6 +100,7 @@
   position: absolute;
   flex-direction: column;
   display: none;
+  min-width: 100%;
   top: 40px;
   border: 1px solid #EDEDED;
   border-radius: 4px;
@@ -426,7 +427,11 @@
   left: 25px;
 
   @media (min-width: 768px) {
-    left: 35px;
+    left: 55px;
+  }
+
+  @media (min-width: 991px) {
+    left: 40px;
   }
 }
 
@@ -436,7 +441,11 @@
   transform: rotate(180deg);
 
   @media (min-width: 768px) {
-    right: 35px;
+    right: 55px;
+  }
+
+  @media (min-width: 991px) {
+    right: 40px;
   }
 }
 
