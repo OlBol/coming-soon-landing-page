@@ -1,0 +1,44 @@
+section.about
+    .container
+        h3.title.about__title Наши теплоходы уже бороздят речные просторы:
+    .about__cities.js-cities
+        .about__cities-mobile.js-image-on-mobile
+            .container
+                include budapest/cities-mobile
+                //include budapest/cities-mobile_en
+                //include paris/cities-mobile
+                //include paris/cities-mobile_en
+                //include london/cities-mobile
+                //include london/cities-mobile_en
+        .about__cities-desktop.js-image-on-desktop
+            include budapest/cities-desktop
+            //include budapest/cities-desktop_en
+            //include paris/cities-desktop
+            //include paris/cities-desktop_en
+            //include london/cities-desktop
+            //include london/cities-desktop_en
+        .about__area.js-city-area(data-area='budapest')
+            a.about__popup.about__popup--budapest(href="https://budapest.com" target="_blank")
+                img.about__img(src="./assets/img/landing/budapest.jpg" alt="Фотография города Будапешта.")
+        .about__area.js-city-area(data-area='paris')
+            a.about__popup.about__popup--paris(href="https://paris.com" target="_blank")
+                img.about__img(src="./assets/img/landing/paris.jpg" alt="Фотография города Парижа.")
+        .about__area.js-city-area(data-area='london')
+            a.about__popup.about__popup--london(href="https://london.com" target="_blank")
+                img.about__img(src="./assets/img/landing/london.jpg" alt="Фотография города Лондона.")
+        .about__area.js-city-area(data-area='novgorod')
+            a.about__popup.about__popup--novgorod(href="https://moskvatrip.ru" target="_blank")
+                img.about__img(src="./assets/img/landing/novgorod.jpg" alt="Фотография города Будапешта.")
+        .about__area.js-city-area(data-area='kazan')
+            a.about__popup.about__popup--kazan(href="https://moskvatrip.ru" target="_blank")
+                img.about__img(src="./assets/img/landing/kazan.jpg" alt="Фотография города Будапешта.")
+        .about__area.js-city-area(data-area='praha')
+            a.about__popup.about__popup--praha(href="https://prahatrip.cz" target="_blank")
+                img.about__img(src="./assets/img/landing/praha.jpg" alt="Фотография города Будапешта.")
+        .about__area.js-city-area(data-area='moscow')
+            a.about__popup.about__popup--moscow(href="https://moskvatrip.ru" target="_blank")
+                img.about__img(src="./assets/img/landing/moscow.jpg" alt="Фотография города Будапешта.")
+        .about__area.js-city-area(data-area='spb')
+            a.about__popup.about__popup--spb(href="https://nevatrip.ru" target="_blank")
+                img.about__img(src="./assets/img/landing/spb.jpg" alt="Фотография города Будапешта.")
+        .about__cursor.js-cursor
